@@ -19,11 +19,20 @@ FROM python:3.11-slim
 # Set the working directory
 WORKDIR /app
 
+# Install Tesseract again in the final image
+RUN apt-get update && \
+    apt-get install -y tesseract-ocr && \
+    rm -rf /var/lib/apt/lists/*
+
 # Copy only the necessary files from the builder stage
 COPY --from=builder /app /app
 
 # Copy the application code from the current directory to the /app directory in the final image
 COPY app.py .
+
+# Copy templates and static files
+COPY templates templates
+COPY static static
 
 # Set the command to run your application
 CMD ["python", "app.py"]
