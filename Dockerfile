@@ -22,8 +22,8 @@ WORKDIR /app
 # Copy only the necessary files from the builder stage
 COPY --from=builder /app /app
 
-# Copy the application code
-COPY . .
+# Copy the application code from the current directory to the /app directory in the final image
+COPY app.py .
 
 # Set the command to run your application
 CMD ["python", "app.py"]
