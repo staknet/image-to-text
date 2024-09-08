@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Path to tesseract executable
-pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 # Ensure the upload directory exists
 upload_dir = 'static/uploads'
@@ -52,4 +52,4 @@ def download_text():
     return 'File not found', 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
