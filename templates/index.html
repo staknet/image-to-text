@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Text Conversion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image to Text Conversion</h1>
+        <p class="instructions">Please choose an image file and then click "Upload" to process it. You will
+            be able to preview the results and download the extracted text.</p>
+        <!-- Form Section -->
+        <form action="/uploads" method="post" enctype="multipart/form-data">
+            <label for="file-upload" class="file-upload-label">Choose Your Image</label>
+            <input type="file" id="file-upload" name="file" required />
+            <button type="submit" id="upload-button">Upload Receipt</button>
+        </form>
+    </div>
+</body>
+
+</html>

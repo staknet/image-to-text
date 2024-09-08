@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Text Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image to Text Results</h1>
+        <div class="results">
+            <div class="image-preview">
+                <h2>Uploaded Image</h2>
+                <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Uploaded Image">
+            </div>
+            <div class="text-preview">
+                <h2>Extracted Text</h2>
+                <pre>{{ extracted_text }}</pre>
+            </div>
+        </div>
+        <a href="/download?filename={{ image_filename }}" class="download-button">Download Extracted Text</a>
+        <a href="/" class="upload-another-button">Upload Another File</a>
+    </div>
+</body>
+
+</html>

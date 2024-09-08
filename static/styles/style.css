@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9f5ff;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.instructions {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.file-upload-label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #007bff;
+    cursor: pointer;
+    background-color: #e0f0ff;
+    border: 2px solid #007bff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    background-color: #c0c0c0;
+    /* Grey when disabled */
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: not-allowed;
+    /* Indicate disabled state */
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+input[type="file"]:valid~button {
+    background-color: #28a745;
+    /* Green when enabled */
+    cursor: pointer;
+    color: #fff;
+}
+
+input[type="file"]:valid~button:hover {
+    background-color: #218838;
+    /* Darker green when hovered */
+}
+
+input[type="file"]:not(:valid)~button {
+    background-color: #c0c0c0;
+    /* Grey when disabled */
+}
+
+/* Hide label for file input */
+#file-upload:valid~.file-upload-label {
+    display: none;
+    /* Hide the label once a file is selected */
+}
+
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.image-preview,
+.text-preview {
+    flex: 1;
+    max-width: 45%;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 2rem;
+}
+
+.download-button:hover {
+    background-color: #218838;
+}
+
+.upload-another-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.upload-another-button:hover {
+    background-color: #0056b3;
+}
